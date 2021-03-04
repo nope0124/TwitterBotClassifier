@@ -6,15 +6,15 @@
         {% csrf_token %}
         <button type = "submit">Send</button>
     </form>
-    {% if title %}
-        {% if title >= 95 %}
-            <h1>Bot度: 95%以上</h1>
-        {% elif title == -1 %}
+    {% if pred %}
+        {% if pred >= 95 %}
+            <h1>@{{ user_name }}さんのBot類似度: 95%以上</h1>
+        {% elif pred == -1 %}
             <h1>ユーザが存在しません。</h1>
-        {% elif title <= 5 %}
-            <h1>Bot度: 5%以下</h1>
+        {% elif pred <= 5 %}
+            <h1>@{{ user_name }}さんのBot類似度: 5%以下</h1>
         {% else %}
-            <h1>Bot度: {{ title }}%</h1>
+            <h1>@{{ user_name }}さんのBot類似度: {{ pred }}%</h1>
         {% endif %}
         
     {% endif %}

@@ -53,12 +53,15 @@ def index(request):
             return render(
                 request,
                 "bot/home.html",
-                {"title": prediction},
+                {
+                    "pred": prediction,
+                    "user_name": user_id,
+                }
                 
             )
         except TweepError:
             return render(
                 request,
                 "bot/home.html",
-                {"title": -1}
+                {"pred": -1}
             )
