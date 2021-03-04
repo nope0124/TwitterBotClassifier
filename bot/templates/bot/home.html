@@ -1,0 +1,21 @@
+<body style = "background-color: #f4f4f4;">
+    <h1>Twitter Bot Classifier</h1>
+
+    <form action = "{% url 'home' %}" method = "POST">
+        <input type = "text" name = "user_id" style = "font-size: 2em; width: 300px;" >
+        {% csrf_token %}
+        <button type = "submit">Send</button>
+    </form>
+    {% if title %}
+        {% if title >= 95 %}
+            <h1>Bot度: 95%以上</h1>
+        {% elif title == -1 %}
+            <h1>ユーザが存在しません。</h1>
+        {% elif title <= 5 %}
+            <h1>Bot度: 5%以下</h1>
+        {% else %}
+            <h1>Bot度: {{ title }}%</h1>
+        {% endif %}
+        
+    {% endif %}
+</body>

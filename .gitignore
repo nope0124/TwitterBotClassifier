@@ -1,0 +1,9 @@
+bot/consts.py
+bot/__pycache__/consts.cpython-37.pyc
+*.log
+*.pot
+*.pyc
+__pycache__/
+local_settings.py
+db.sqlite3
+media
